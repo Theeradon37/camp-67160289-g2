@@ -53,11 +53,14 @@
                     <label for="gender" class="fs-5">เพศ</label>
                 </div>
                 <div class="col-4">
-                    <select id="gender" name="gender" class="form-control">
-                        <option value="">-- กรุณาเลือกเพศ --</option>
-                        <option value="male">ชาย</option>
-                        <option value="female">หญิง</option>
-                        <option value="other">อื่น ๆ</option>
+                    <input type="radio" id="male" name="gender" value="male">
+                    <label for="male" class="fs-5 me-5">ชาย</label>
+
+                    <input type="radio" id="female" name="gender" value="female">
+                    <label for="female" class="fs-5 me-5">หญิง</label>
+
+                    <input type="radio" id="female" name="gender" value="female">
+                    <label for="female" class="fs-5 me-5">อื่นๆ</label>
                     </select>
                 </div>
             </div>
@@ -101,14 +104,14 @@
                 </div>
             </div>
 
-            <div class="form-check mt-3">
-                <input class="form-check-input" type="checkbox" id="agree" name="agree" required>
-                <label class="form-check-label" for="agree">
+            <div class="form-check mt-5" style="margin-left: 150px;">
+                <input class="form-check-input ms-5" type="checkbox" id="agree" name="agree" required>
+                <label class="form-check-label ms-2" for="agree">
                     ยินยอมเงื่อนไขและข้อตกลง
                 </label>
             </div>
 
-            <div class="mt-3">
+            <div class="mt-3" style="margin-left: 350px;">
                 <button type="reset" class="btn btn-secondary">รีเซ็ต</button>
                 <button type="submit" class="btn btn-primary">บันทึก</button>
             </div>
