@@ -1,16 +1,7 @@
 <!-- resourse/views/html101.blade.php -->
-<!DOCTYPE html>
-<html>
-    <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Sarabun:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
-        <meta charset="utf-8" />
-        <title>Webshop</title>
-        <link rel="stylesheet" href="css/bootstrap.css" />
-    </head>
+@extends('template.default')
 
-    <body>
+    @section('content')
        <div class="container pt-5">     <!-- p(padding) t(top) 5(scale) -->
         <h1>Workshop #HTML - FORM</h1>
         <form action="your-action.php" method="post" enctype="multipart/form-data">
@@ -27,7 +18,11 @@
                 </div>
                 <div class="col-4">
                     <input type="text" id="fname" name="fname" class="form-control">
+                    <div class="invalid-feedback">
+                        Looks good
+                    </div>
                 </div>
+
             </div>
 
             <div class="row align-items-center mt-3">
@@ -53,15 +48,16 @@
                     <label for="gender" class="fs-5">เพศ</label>
                 </div>
                 <div class="col-4">
+
                     <input type="radio" id="male" name="gender" value="male">
                     <label for="male" class="fs-5 me-5">ชาย</label>
 
                     <input type="radio" id="female" name="gender" value="female">
                     <label for="female" class="fs-5 me-5">หญิง</label>
 
-                    <input type="radio" id="female" name="gender" value="female">
-                    <label for="female" class="fs-5 me-5">อื่นๆ</label>
-                    </select>
+                    <input type="radio" id="other" name="gender" value="other">
+                    <label for="other" class="fs-5 me-5">อื่นๆ</label>
+
                 </div>
             </div>
 
@@ -113,11 +109,26 @@
 
             <div class="mt-3" style="margin-left: 350px;">
                 <button type="reset" class="btn btn-secondary">รีเซ็ต</button>
-                <button type="submit" class="btn btn-primary">บันทึก</button>
+                <button type="submit" onclick="checkValidate()" class="btn btn-primary">บันทึก</button>
             </div>
 
         </form>
 
        </div>
-    </body>
-</html>
+    @endsection
+
+    @push('scripts')
+        <script>
+            console.log('it's work!)
+            checkValidate = () = =>{
+                let fname = document.getElementById('fname')
+                if(fname.value == ""){
+                    fname.classList.remove("is-valid")
+                    fname.classList.add("is-invalid")
+                }else {
+                    fname.classList.remove("is-invalid")
+                    fname.classList.add("is-valid")
+                }
+            }
+        </script>
+    @endpush
