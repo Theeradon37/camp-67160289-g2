@@ -11,7 +11,7 @@ class MyController extends Controller
         //
     }
     function index(){
-        echo $_GET['num'];
+        // echo $_GET['num'];
         return $this->MYFUNCTION(); //ใช้ตัวเล็ก หรือตัวใหญ่ทั้งหมดก็ได้
     }
     function myfunction(){  //
@@ -22,4 +22,8 @@ class MyController extends Controller
         $data['mynum'] = $request->input('num');
         return view('myview.process', $data);
     }
+    // function store(Request $request){
+    //     $data[''] = $request->input('');
+    //     return view('', $data);
+    // }
 }
