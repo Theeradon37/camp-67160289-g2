@@ -22,8 +22,4 @@ class MyController extends Controller
         $data['mynum'] = $request->input('num');
         return view('myview.process', $data);
     }
-    // function store(Request $request){
-    //     $data[''] = $request->input('');
-    //     return view('', $data);
-    // }
 }

@@ -11,3 +11,6 @@ Route::get('/view2', function(){
 });
 Route::get('/mycontroller', [App\Http\Controllers\MyController::class, 'index']);
 Route::post('/mycontroller', [App\Http\Controllers\MyController::class, 'process']);
+
+Route::get('/workshop', [App\Http\Controllers\WorkShop::class, 'index']);
+Route::post('/workshop', [App\Http\Controllers\WorkShop::class, 'store']);
