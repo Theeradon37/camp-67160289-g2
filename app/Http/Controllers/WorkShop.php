@@ -6,7 +6,7 @@ class WorkShop  extends Controller{
     public function index(){
         return $this->MYFUNCTION();
     }
-    function myfunction(){  //
+    function myfunction(){
         return view('html101');
     }
     public function store(Request $request){

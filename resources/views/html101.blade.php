@@ -5,7 +5,7 @@
        <div class="container pt-5">     <!-- p(padding) t(top) 5(scale) -->
         <h1>Workshop #HTML - FORM</h1>
             {{-- <form action="your-action.php" method="post" enctype="multipart/form-data"> --}}
-            <form action="/workshop" method="POST" enctype="multipart/form-data">
+            <form action="/" method="POST" enctype="multipart/form-data">
             @csrf
             <style>
                 body {
