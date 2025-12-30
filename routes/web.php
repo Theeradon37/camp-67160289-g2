@@ -15,7 +15,10 @@ Route::post('/mycontroller', [App\Http\Controllers\MyController::class, 'process
 Route::get('/', [App\Http\Controllers\WorkShop::class, 'index']);
 Route::post('/', [App\Http\Controllers\WorkShop::class, 'store']);
 
-Route::namespace('App\Http\Controllers')->group(function () {
+Route::namespace('App\Http\Controllers')->group(function() {
     Route::get('/flight', 'FlightController@index');
-    Route::post('/flight','FlightController@store');
+    Route::get('/flight/{id}', 'FlightController@update');
+    Route::post('/flight', 'FlightController@store');
+    Route::put('/flight/{id}', 'FlightController@update_action');
+    Route::delete('/flight/{id}', 'FlightController@delete_action');
 });
