@@ -21,4 +21,10 @@ Route::namespace('App\Http\Controllers')->group(function() {
     Route::post('/flight', 'FlightController@store');
     Route::put('/flight/{id}', 'FlightController@update_action');
     Route::delete('/flight/{id}', 'FlightController@delete_action');
+
+    Route::get('/pokedex', 'PokedexController@index');
+    Route::get('/pokedex/{id}', 'PokedexController@update');
+    Route::post('/pokedex', 'PokedexController@store');
+    Route::put('/pokedex/{id}', 'PokedexController@update_action');
+    Route::delete('/pokedex/{id}', 'PokedexController@delete_action');
 });

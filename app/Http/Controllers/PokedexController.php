@@ -1,64 +1,44 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
+use App\Models\Pokedex;
 
-class PokedexController extends Controller
-{
-    /**
-     * Display a listing of the resource.
-     */
-    public function index()
-    {
-        //
+class PokedexController extends Controller {
+    public function index() {
+        $data['pokedexs'] = Pokedex::all();
+        return view('pokedexs.index', $data);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
+    public function store(Request $req) {
+        $p = new Pokedex;
+        $p->name = $req->name;
+        $p->type = $req->type;
+        $p->species = $req->species;
+        $p->height = $req->height;
+        $p->weight = $req->weight;
+        $p->hp = $req->hp;
+        $p->attack = $req->attack;
+        $p->defense = $req->defense;
+        $p->image_url = $req->image_url;
+        $p->save();
+        return redirect('/pokedex');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
+    public function update($id) {
+        $data['pokedex_update'] = Pokedex::find($id);
+        $data['pokedexs'] = Pokedex::all();
+        return view('pokedexs.update', $data);
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
+    public function update_action(Request $req, $id) {
+        $p = Pokedex::find($id);
+        $p->update($req->all()); // วิธีเขียนแบบย่อ
+        return redirect('/pokedex');
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
+    public function delete_action($id) {
+        Pokedex::destroy($id);
+        return redirect('/pokedex');
     }
 }
