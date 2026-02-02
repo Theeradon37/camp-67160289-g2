@@ -30,3 +30,4 @@
         @include('flight.table')
     </div>
 @endsection
+

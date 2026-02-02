@@ -14,12 +14,15 @@ class MyController extends Controller
         // echo $_GET['num'];
         return $this->MYFUNCTION(); //ใช้ตัวเล็ก หรือตัวใหญ่ทั้งหมดก็ได้
     }
+
     function myfunction(){  //
         return view('myview.index');
     }
+
     function process(Request $request){
         // echo $request->input('num');
         $data['mynum'] = $request->input('num');
         return view('myview.process', $data);
     }
 }
+

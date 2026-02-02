@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
 use App\Models\Flight;
 
@@ -10,7 +9,6 @@ class FlightController extends Controller
     /**
      * ส่วนของ Private Methods (มักใช้ทดสอบภายใน ไม่สามารถเรียกผ่าน URL ได้โดยตรง)
      */
-
     // ฟังก์ชันสำหรับทดลองเพิ่มข้อมูลแบบกำหนดค่าเอง (Hard-coded)
     private function insert_db()
     {

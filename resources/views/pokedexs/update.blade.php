@@ -1,5 +1,4 @@
 @extends('template.default')
-
 @section('header1', 'Pokedex Data')
 @section('content')
     <div class="row">
@@ -36,3 +35,4 @@
         @include('pokedex.table')
     </div>
 @endsection
+

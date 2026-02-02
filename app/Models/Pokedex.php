@@ -10,3 +10,4 @@ class Pokedex extends Model
     protected $table = 'pokedexs';
     protected $guarded = [];
 }
+
